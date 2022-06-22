@@ -13,6 +13,18 @@ class Profile(models.Model):
     created = models.DateTimeField(auto_now_add=True)
 
 
-class Rating(models.Model):    
+    def save_profile(self):
+        self.save()   
+
+    def delete_profile(self):
+        self.delete()
+        
+    @classmethod
+    def search_profiles(cls, search_term):
+        profiles = cls.objects.filter(user__username__icontains=search_term).all()
+        return profiles
+
+    def __str__(self):
+        return self.bio
 
 
