@@ -22,4 +22,20 @@ def register(request):
             return redirect('index.html')
     else:        
         form = RegisterForm()
-    return render(request,'register.html',{'form':form})      
+    return render(request,'register.html',{'form':form}) 
+
+
+def login_user(request):
+    form = AuthenticationForm()
+    context = {'form':form}
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('/')
+        else:
+            return render(request,'registration/login.html',context)  
+    else:
+        return render(request,'registration/login.html',context)              
