@@ -38,4 +38,30 @@ def login_user(request):
         else:
             return render(request,'registration/login.html',context)  
     else:
-        return render(request,'registration/login.html',context)              
+        return render(request,'registration/login.html',context)   
+
+def logout_user(request):
+    logout(request)
+    return redirect('login')                
+@login_required(login_url='login')
+def profile(request):
+    user = request.user.pk
+    profile = Profile.objects.all()
+    profile = Profile.objects.filter(user=request.user.pk)
+    context = {'profile': profile}
+    return render(request, 'profile.html',context)  
+@login_required
+def update_profile(request):
+    form = UpdateProfileForm()
+    user = request.user
+    profile = Profile.objects.get(user=user)
+    if request.method == 'POST':
+        form = UpdateProfileForm(request.POST,request.FILES)
+        if form.is_valid():
+            profile.profile_photo = form.cleaned_data.get('profile_photo')
+            profile.bio = form.cleaned_data.get('bio')
+            profile.save()
+            return redirect('profile')
+        else:
+            form = UpdateProfileForm() 
+    return render(request, 'update_profile.html',{'form':form})                    
