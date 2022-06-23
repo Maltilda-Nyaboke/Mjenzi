@@ -63,4 +63,12 @@ def update_profile(request):
             return redirect('profile')
         else:
             form = UpdateProfileForm() 
-    return render(request, 'update_profile.html',{'form':form})                    
+    return render(request, 'update_profile.html',{'form':form}) 
+
+def about(request):
+    return render(request, 'about.html')    
+
+def contact(request):
+    return render(request, 'contact.html')
+def post(request):
+    return render(request, 'post.html')                           
