@@ -5,6 +5,12 @@
     --light: #F8F9FA;
     --dark: #182333;
 }
+body {
+    --primary: #FDA12B;
+    --secondary: #8D9297;
+    --light: #F8F9FA;
+    --dark: #182333;
+}
 
 .back-to-top {
     position: fixed;

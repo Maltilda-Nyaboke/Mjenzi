@@ -5,47 +5,27 @@
     <div class="container">
       <div class="row g-5 align-items-end mb-5">
         <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-          <div class="border-start border-5 border-primary ps-4">
+          <div class="border-start border-5 ps-4" style="border:#FDA12B ;">
             <h6 class="text-body text-uppercase mb-2">Our Team</h6>
-            <h1 class="display-6 mb-0">Our Expert Worker</h1>
+            <h1 class="display-6 mb-0">Our Expert Workers</h1>
           </div>
         </div>
         <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
           <p class="mb-0">
-            Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu
-            diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet
-            lorem sit clita duo justo magna dolore erat amet
+            Here we have a complied list of all the workers that have posted their details on our website for easy placement into job opportunities that are classified according to what they are experts at.
           </p>
         </div>
       </div>
       <div class="row g-4">
         <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
           <div class="team-item position-relative">
-            <img class="img-fluid" src="{% static 'img/team-1.jpg' %}" alt="" />
+            <img class="img-fluid" src="{{profile.profile_photo.url}}" alt="" />
             <div class="team-text bg-white p-4">
-              <h5>Full Name</h5>
-              <span>Engineer</span>
+              <h5>{{profile.name}}</h5>
+              <span>{{profile.expertise}}</span>
             </div>
           </div>
-        </div>
-        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-          <div class="team-item position-relative">
-            <img class="img-fluid" src="{% static 'img/team-2.jpg' %}" alt="" />
-            <div class="team-text bg-white p-4">
-              <h5>Full Name</h5>
-              <span>Engineer</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-          <div class="team-item position-relative">
-            <img class="img-fluid" src="{% static 'img/team-3.jpg' %}" alt="" />
-            <div class="team-text bg-white p-4">
-              <h5>Full Name</h5>
-              <span>Engineer</span>
-            </div>
-          </div>
-        </div>
+        </div> 
       </div>
     </div>
   </div>

@@ -4,7 +4,7 @@ class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 py-
 >
 <a href="{% url 'home' %}" class="navbar-brand d-flex align-items-center">
   <h1 class="m-0">
-    <i class="fa fa-building text-primary me-3"></i>M-jenzi
+    <i class="fa fa-building me-3" style="color:#FDA12B ;"></i>M-jenzi
   </h1>
 </a>
 <button
@@ -20,6 +20,8 @@ class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 py-
     <a href="{% url 'home' %}"class="nav-item nav-link active">Home</a>
     <a href="{% url 'about' %}" class="nav-item nav-link">About Us</a>
     <a href="{% url 'contact' %}" class="nav-item nav-link">Contact Us</a>
+    <small style="margin-top:25px;margin-left:25px;">Are you a Worker?</small>
+    <a href="{% url 'login' %}" class="nav-item nav-link"><button class="btn" style="background-color:#FDA12B;">Login</button></a>
   </div>
 </div>
 </nav>

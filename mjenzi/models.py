@@ -8,6 +8,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True, related_name='profile')
     profile_photo = models.ImageField(upload_to='images')
     name = models.CharField(max_length=75, null=True, blank=True)
+    expertise = models.CharField(max_length=65, null=True, blank=True)
     description = models.TextField(blank=True)
     contact = models.CharField(max_length=50, blank=True, null=True)
     location = models.CharField(max_length=255, null=True, blank=True)
