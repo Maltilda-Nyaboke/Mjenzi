@@ -19,11 +19,76 @@
       <div class="row g-4">
         <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
           <div class="team-item position-relative">
-            <img class="img-fluid" src="{{profile.profile_photo.url}}" alt="" />
-            <div class="team-text bg-white p-4">
-              <h5>{{profile.name}}</h5>
-              <span>{{profile.expertise}}</span>
+            <div class="card" style="width: 18rem;">
+              <div class="card-header">
+                <h5 class="card-title">{{user.profile.name}}</h5>
+              </div>
+              <img src="{{user.profile.profile_photo.url}}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{user.profile.expertise}}</h5>
+                <p class="card-text">{{user.profile.description}}</p>
+                <a href="#"> <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color:#FDA12B; color: white;">
+                  Contact Me
+                </button></a>
+              </div>
             </div>
+            <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Get In Touch</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="row g-3">
+              <div class="col-md-6">
+                  <div class="form-floating">
+                      <input type="text" class="form-control border-0 bg-light" id="name"
+                          placeholder="Your Name" />
+                      <label for="name">Your Name</label>
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <div class="form-floating">
+                      <input type="email" class="form-control border-0 bg-light" id="email"
+                          placeholder="Your Email" />
+                      <label for="email">Your Email</label>
+                  </div>
+              </div>
+              <div class="col-12">
+                  <div class="form-floating">
+                      <input type="text" class="form-control border-0 bg-light" id="subject"
+                          placeholder="Subject" />
+                      <label for="subject">Subject</label>
+                  </div>
+              </div>
+              <div class="col-12">
+                  <div class="form-floating">
+                      <textarea class="form-control border-0 bg-light" placeholder="Leave a message here"
+                          id="message" style="height: 150px"></textarea>
+                      <label for="message">Message</label>
+                  </div>
+              </div>
+              <div class="col-12">
+                  <button class="btn py-3 px-5" type="submit" style="background-color:#FDA12B ;">
+                      Send Message
+                  </button>
+              </div>
+          </div>
+      </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color:#4F4F4F ;">Close</button>
+        <button type="button" class="btn" style="background-color:#FDA12B ;">Send</button>
+      </div>
+    </div>
+  </div>
+</div>
           </div>
         </div> 
       </div>

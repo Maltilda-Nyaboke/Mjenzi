@@ -49,11 +49,19 @@ def profile(request):
     profile = Profile.objects.all()
     profile = Profile.objects.filter(user=request.user.pk)
     context = {'profile': profile}
-    return render(request, 'post.html',context)  
+    return render(request, 'profile.html',context)  
+
+def post(request):
+    user = request.user.pk
+    profile = Profile.objects.all()
+    profile = Profile.objects.filter(user=request.user.pk)
+    context = {'profile': profile}
+    return render(request, 'post.html',context)
+
 def update_profile(request):
     form = UpdateProfileForm()
     user = request.user
-    # profile = Profile.objects.get(user)
+    profile = Profile.objects.get(user=user)
     if request.method == 'POST':
         form = UpdateProfileForm(request.POST,request.FILES)
         if form.is_valid():
@@ -63,7 +71,6 @@ def update_profile(request):
             profile.description = form.cleaned_data.get('description')
             profile.location = form.cleaned_data.get('location')
             profile.contact= form.cleaned_data.get('contact')
-            
             profile.save()
             
             
