@@ -25,4 +25,5 @@ class RegisterForm(UserCreationForm):
 class UpdateProfileForm(ModelForm):
     class Meta():
         model = Profile
-        fields = ['profile_photo','name','expertise','description','location','contact']        
+        fields = ['profile_photo','name','expertise','description','location','contact']       
+         
